@@ -1,0 +1,1 @@
+task_name=assembleDebug total_build_time=141550,startup=1184,settings_and_buildsrc=4,loading_projects=13,configuring_projects=1286,artifact_transforms=28788,task_execution=369530

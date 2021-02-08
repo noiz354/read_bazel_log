@@ -1,0 +1,10 @@
+=== PHASE SUMMARY INFORMATION ===
+Total launch phase time     0.272 s  0.06%
+Total init phase time      1.105 s  0.25%
+Total target pattern evaluation phase time  0.044 s  0.01%
+Total interleaved loading-and-analysis phase time 245.803 s  56.45%
+Total preparation phase time  0.263 s  0.06%
+Total execution phase time  187.952 s  43.16%
+Total finish phase time     0.022 s  0.01%
+------------------------------------------------
+Total run time        435.463 s 100.00%

@@ -11,4 +11,4 @@ fancy-regex = "0.4.1"
 regex = "1"
 scanner-rust = "2.0.12"
 futures={ version = "0.3.9", default-features = true, features=["thread-pool", "alloc"]} 
-
+quick-xml = "0.20.0"

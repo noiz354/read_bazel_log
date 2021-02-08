@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="299900000"
+    android:versionName="3.90"
+    android:compileSdkVersion="30"
+    android:compileSdkVersionCodename="11"
+    package="com.example.tkpd"
+    platformBuildVersionCode="30"
+    platformBuildVersionName="11">
+
+    
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="30" />
+
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission
+        android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <uses-permission
+        android:name="android.permission.CAMERA" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x20000"
+        android:required="true" />
+
+    <permission
+        android:name="android.permission.INTERACT_ACROSS_USERS_FULL"
+        android:protectionLevel="0x2" />
+
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <permission
+        android:name="com.example.tkpd.permission.C2D_MESSAGE"
+        android:protectionLevel="0x2" />
+
+    <uses-feature
+        android:name="android.hardware.camera" />
+
+    <application
+        android:theme="@ref/0x7f120200"
+        android:label="@ref/0x7f11047a"
+        android:name="com.example.application.MyApplication"
+        android:debuggable="true"
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:fullBackupContent="@ref/0x7f140000"
+        android:networkSecurityConfig="@ref/0x7f140002"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:requestLegacyExternalStorage="true">
+
+        <activity
+            android:theme="@ref/0x7f1201ed"
+            android:name="com.example.tkpd.MainActivity">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAqJLm1orGnm6BYnTu0a9uIjwS4gd8ThRY" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:exported="false"
+            android:multiprocess="true"
+            android:authorities="com.example.tkpd.lifecycle-process" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false"
+            android:directBootAware="true" />
+
+        <activity
+            android:name="androidx.slice.compat.SlicePermissionActivity"
+            android:excludeFromRecents="true" />
+
+        <provider
+            android:name="androidx.work.impl.WorkManagerInitializer"
+            android:exported="false"
+            android:multiprocess="true"
+            android:authorities="com.example.tkpd.workmanager-init"
+            android:directBootAware="false" />
+
+        <service
+            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+            android:enabled="@ref/0x7f050008"
+            android:exported="false"
+            android:directBootAware="false" />
+
+        <service
+            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="@ref/0x7f05000a"
+            android:exported="true"
+            android:directBootAware="false" />
+
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            android:enabled="@ref/0x7f050009"
+            android:exported="false"
+            android:directBootAware="false" />
+
+        <receiver
+            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:directBootAware="false" />
+
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+
+                <action
+                    android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.BATTERY_OKAY" />
+
+                <action
+                    android:name="android.intent.action.BATTERY_LOW" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+
+                <action
+                    android:name="android.intent.action.DEVICE_STORAGE_OK" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <action
+                    android:name="android.intent.action.TIME_SET" />
+
+                <action
+                    android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+            android:enabled="@ref/0x7f050008"
+            android:exported="false"
+            android:directBootAware="false">
+
+            <intent-filter>
+
+                <action
+                    android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:theme="@ref/0x7f1200e9"
+            android:label="@ref/0x7f1100a4"
+            android:name="com.chuckerteam.chucker.api.internal.ui.MainActivity"
+            android:taskAffinity="com.chuckerteam.chucker.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f1200e9"
+            android:name="com.chuckerteam.chucker.api.internal.ui.transaction.TransactionActivity"
+            android:parentActivityName="com.chuckerteam.chucker.api.internal.ui.MainActivity" />
+
+        <activity
+            android:theme="@ref/0x7f1200e9"
+            android:name="com.chuckerteam.chucker.api.internal.ui.error.ErrorActivity"
+            android:parentActivityName="com.chuckerteam.chucker.api.internal.ui.MainActivity" />
+
+        <service
+            android:name="com.chuckerteam.chucker.api.internal.support.ClearTransactionsService"
+            android:exported="false" />
+
+        <service
+            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+            android:exported="false">
+
+            <meta-data
+                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+                android:value="cct" />
+        </service>
+
+        <service
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+            android:exported="false" />
+
+        <activity
+            android:theme="@ref/0x01030010"
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:exported="false"
+            android:excludeFromRecents="true" />
+
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:exported="true" />
+
+        <activity
+            android:theme="@ref/0x01030010"
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@ref/0x7f0a0018" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false"
+            android:directBootAware="true">
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+            android:permission="android.permission.INSTALL_PACKAGES"
+            android:enabled="true"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+            android:enabled="false"
+            android:exported="false"
+            android:process=":playcore_missing_splits_activity"
+            android:stateNotNeeded="true"
+            android:launchMode="3" />
+
+        <activity
+            android:theme="@ref/0x7f12021f"
+            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+            android:enabled="false"
+            android:exported="false"
+            android:stateNotNeeded="true" />
+
+        <service
+            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+            android:enabled="false"
+            android:exported="true" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:exported="false"
+            android:authorities="com.example.tkpd.firebaseinitprovider"
+            android:initOrder="100"
+            android:directBootAware="true" />
+
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="false"
+            android:directBootAware="true">
+
+            <intent-filter
+                android:priority="-500">
+
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="com.google.firebase.perf.provider.FirebasePerfProvider"
+            android:exported="false"
+            android:authorities="com.example.tkpd.firebaseperfprovider"
+            android:initOrder="101" />
+
+        <provider
+            android:name="leakcanary.internal.LeakCanaryFileProvider"
+            android:exported="false"
+            android:authorities="com.squareup.leakcanary.fileprovider.com.example.tkpd"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@ref/0x7f140001" />
+        </provider>
+
+        <activity
+            android:theme="@ref/0x7f1202ca"
+            android:label="@ref/0x7f1101d0"
+            android:icon="@ref/0x7f0e0009"
+            android:name="leakcanary.internal.activity.LeakActivity"
+            android:taskAffinity="com.squareup.leakcanary.com.example.tkpd" />
+
+        <activity-alias
+            android:theme="@ref/0x7f1202ca"
+            android:label="@ref/0x7f1101d0"
+            android:icon="@ref/0x7f0e0009"
+            android:name="leakcanary.internal.activity.LeakLauncherActivity"
+            android:enabled="@ref/0x7f05000e"
+            android:taskAffinity="com.squareup.leakcanary.com.example.tkpd"
+            android:targetActivity="leakcanary.internal.activity.LeakActivity"
+            android:banner="@ref/0x7f08035d">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+
+                <category
+                    android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:theme="@ref/0x7f1202cb"
+            android:label="@ref/0x7f1101fb"
+            android:icon="@ref/0x7f0e0009"
+            android:name="leakcanary.internal.RequestStoragePermissionActivity"
+            android:taskAffinity="com.squareup.leakcanary.com.example.tkpd"
+            android:excludeFromRecents="true" />
+
+        <receiver
+            android:name="leakcanary.internal.NotificationReceiver" />
+
+        <service
+            android:name="leakcanary.internal.HeapAnalyzerService"
+            android:exported="false" />
+
+        <provider
+            android:name="leakcanary.internal.AppWatcherInstaller$MainProcess"
+            android:exported="false"
+            android:authorities="com.example.tkpd.leakcanary-installer" />
+
+        <activity
+            android:theme="@ref/0x7f1200ee"
+            android:name="com.example.fakeresponse.presentation.activities.BaseActivity" />
+
+        <activity
+            android:theme="@ref/0x7f1200ee"
+            android:name="com.example.fakeresponse.presentation.activities.AddGqlActivity" />
+
+        <activity
+            android:theme="@ref/0x7f1200ee"
+            android:name="com.example.fakeresponse.presentation.activities.AddRestResponseActivity" />
+
+        <activity
+            android:theme="@ref/0x7f1200ee"
+            android:name="com.example.fakeresponse.chuck.presentation.activities.SearchActivity" />
+
+        <activity
+            android:theme="@ref/0x7f1200ee"
+            android:name="com.example.fakeresponse.presentation.activities.PasteTextActivity" />
+
+        <activity
+            android:theme="@ref/0x7f1200ee"
+            android:name="com.example.fakeresponse.presentation.activities.FakeResponseActivity"
+            android:taskAffinity="fakeresponse.gqlTesting"
+            android:launchMode="2">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.example.tkpd.fakeresponse.gqlTesting" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:label="@ref/0x7f110037"
+            android:name="com.example.developer_options.presentation.activity.DeveloperOptionActivity"
+            android:screenOrientation="1"
+            android:windowSoftInputMode="0x2">
+
+            <intent-filter
+                android:autoVerify="true">
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="@ref/0x7f110502"
+                    android:host="@ref/0x7f11018c"
+                    android:pathPrefix="@ref/0x7f1102aa" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:label="@ref/0x7f110438"
+            android:name="com.example.developer_options.remote_config.RemoteConfigFragmentActivity"
+            android:screenOrientation="1"
+            android:windowSoftInputMode="0x22" />
+
+        <service
+            android:name="com.example.developer_options.presentation.service.DeleteFirebaseTokenService"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.example.developer_options.notification.ReviewNotificationUpdateExample" />
+
+        <service
+            android:name="com.example.fcmcommon.service.SyncFcmTokenService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="@ref/0x7f110485"
+            android:name="com.example.sessioncommon.view.forbidden.activity.ForbiddenActivity"
+            android:screenOrientation="1"
+            android:windowSoftInputMode="0x23" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="Applink Debugger"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.ApplinkDebuggerActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.analytics.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="FPM Debugger"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.FpmDebuggerActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.analytics.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="Analytics Validator"
+            android:name="com.example.analyticsdebugger.validator.MainValidatorActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.analytics.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="Topads Verificator"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.TopAdsDebuggerActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.analytics.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="Analytics Debugger"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.AnalyticsDebuggerActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.analytics.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="Analytics Debugger - GTM Error"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.AnalyticsGtmErrorDebuggerActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.analytics.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="Analytics Debugger - Iris Save"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.AnalyticsIrisSaveDebuggerActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.analytics.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f120200"
+            android:label="Analytics Debugger - Iris Send"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.AnalyticsIrisSendDebuggerActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.analytics.task"
+            android:launchMode="2" />
+
+        <activity
+            android:theme="@ref/0x7f120208"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.AnalyticsDebuggerDetailActivity" />
+
+        <activity
+            android:theme="@ref/0x7f120208"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.FpmDebuggerDetailActivity" />
+
+        <activity
+            android:theme="@ref/0x7f120208"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.TopAdsDebuggerDetailActivity" />
+
+        <activity
+            android:theme="@ref/0x7f120208"
+            android:name="com.example.analyticsdebugger.debugger.ui.activity.ApplinkDebuggerDetailActivity" />
+
+        <activity
+            android:theme="@ref/0x7f1202c7"
+            android:label="@ref/0x7f11006d"
+            android:icon="@ref/0x7f080132"
+            android:name="com.github.moduth.blockcanary.ui.DisplayActivity"
+            android:enabled="false"
+            android:taskAffinity="com.github.moduth.blockcanary">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.example.notifications.receiver.CMBroadcastReceiver" />
+
+        <service
+            android:name="com.example.core.gcm.intentservices.PushNotificationIntentService"
+            android:exported="false" />
+
+        <service
+            android:name="com.google.android.gms.analytics.CampaignTrackingService" />
+
+        <service
+            android:name="com.example.core.gcm.BaseMessagingService">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.example.core.share.ShareBroadcastReceiver" />
+
+        <activity
+            android:label="@ref/0x7f110037"
+            android:name="com.google.android.gms.tagmanager.PreviewActivity"
+            android:screenOrientation="1"
+            android:noHistory="true">
+
+            <intent-filter>
+
+                <data
+                    android:scheme="tagmanager.c.com.example.tkpd" />
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="@ref/0x7f110000" />
+
+        <meta-data
+            android:name="io.branch.sdk.BranchKey.test"
+            android:value="@ref/0x7f110001" />
+
+        <receiver
+            android:name="com.example.pushnotif.services.DismissBroadcastReceiver" />
+
+        <receiver
+            android:name="com.example.pushnotif.services.ReviewNotificationBroadcastReceiver" />
+
+        <service
+            android:name="com.example.screenrecorder.ScreenRecordService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":ScreenRecorder" />
+
+        <activity
+            android:name="com.example.screenrecorder.ScreenRecorderActivity">
+
+            <intent-filter
+                android:autoVerify="true">
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="@ref/0x7f1101a1"
+                    android:host="@ref/0x7f11016b"
+                    android:path="@ref/0x7f11034e" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@ref/0x7f120222"
+            android:label="@ref/0x7f110206"
+            android:name="com.example.loginregister.login.view.activity.LoginActivity"
+            android:screenOrientation="1"
+            android:windowSoftInputMode="0x2">
+
+            <intent-filter
+                android:autoVerify="true">
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="@ref/0x7f1101a1"
+                    android:host="@ref/0x7f11018d"
+                    android:path="@ref/0x7f110393" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.example.abstraction.common.utils.image.TkpdGlideModule"
+            android:value="GlideModule" />
+    </application>
+</manifest>

@@ -1,0 +1,54 @@
+[32mLoading:[0m 
+[1A[K[32mLoading:[0m 0 packages loaded
+[1A[K[32mAnalyzing:[0m target //app/src/main:app (1 packages loaded, 0 targets configured)
+[1A[K[32mINFO: [0mAnalyzed target //app/src/main:app (1 packages loaded, 28 targets configured).
+
+[1A[K[32mINFO: [0mFound 1 target...
+
+[1A[K[32m[0 / 31][0m [Prepa] Expanding template external/bazel_tools/src/tools/android/java/com/google/devtools/build/android/ziputils/reducer
+[1A[K[32m[24 / 34][0m Sharding classes for dexing for //app/src/main:app; 0s darwin-sandbox
+[1A[K[32m[24 / 34][0m Sharding classes for dexing for //app/src/main:app; 1s darwin-sandbox
+[1A[K[32m[25 / 34][0m [Prepa] Assembling dex files into app/src/main/_dx/app/shard4.dex.zip
+[1A[K[32m[25 / 34][0m 4 actions running
+    Assembling dex files into app/src/main/_dx/app/shard3.dex.zip; 0s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard2.dex.zip; 0s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard1.dex.zip; 0s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard4.dex.zip; 0s darwin-sandbox
+[1A[K[1A[K[1A[K[1A[K[1A[K[32m[25 / 34][0m 4 actions running
+    Assembling dex files into app/src/main/_dx/app/shard3.dex.zip; 1s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard2.dex.zip; 1s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard1.dex.zip; 1s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard4.dex.zip; 1s darwin-sandbox
+[1A[K[1A[K[1A[K[1A[K[1A[K[32m[25 / 34][0m 4 actions running
+    Assembling dex files into app/src/main/_dx/app/shard3.dex.zip; 2s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard2.dex.zip; 2s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard1.dex.zip; 2s darwin-sandbox
+    Assembling dex files into app/src/main/_dx/app/shard4.dex.zip; 2s darwin-sandbox
+[1A[K[1A[K[1A[K[1A[K[1A[K[32m[28 / 34][0m Assembling dex files into app/src/main/_dx/app/shard1.dex.zip; 3s darwin-sandbox
+[1A[K[32m[28 / 34][0m Assembling dex files into app/src/main/_dx/app/shard1.dex.zip; 4s darwin-sandbox
+[1A[K[32m[28 / 34][0m Assembling dex files into app/src/main/_dx/app/shard1.dex.zip; 5s darwin-sandbox
+[1A[K[32m[29 / 34][0m [Prepa] Merging dex shards for //app/src/main:app
+[1A[K[32m[29 / 34][0m Merging dex shards for //app/src/main:app; 0s darwin-sandbox
+[1A[K[32m[30 / 34][0m [Prepa] Generating unsigned apk
+[1A[K[32m[31 / 34][0m [Prepa] Generating unsigned apk
+[1A[K[32m[31 / 34][0m Generating unsigned apk; 0s darwin-sandbox
+[1A[K[32m[32 / 34][0m [Prepa] Zipaligning apk
+[1A[K[32m[32 / 34][0m [Prepa] Zipaligning apk
+[1A[K[32m[32 / 34][0m Zipaligning apk; 0s darwin-sandbox
+[1A[K[32m[33 / 34][0m [Sched] Signing apk
+[1A[K[32m[33 / 34][0m Signing apk; 0s darwin-sandbox
+[1A[KTarget //app/src/main:app up-to-date:
+[32m[34 / 34][0m checking cached actions
+[1A[K  bazel-bin/app/src/main/app_deploy.jar
+[32m[34 / 34][0m checking cached actions
+[1A[K  bazel-bin/app/src/main/app_unsigned.apk
+[32m[34 / 34][0m checking cached actions
+[1A[K  bazel-bin/app/src/main/app.apk
+[32m[34 / 34][0m checking cached actions
+[1A[K[32mINFO: [0mElapsed time: 11.601s, Critical Path: 10.55s
+[32m[34 / 34][0m checking cached actions
+[1A[K[32mINFO: [0m15 processes: 4 internal, 10 darwin-sandbox, 1 worker.
+[32m[34 / 34][0m checking cached actions
+[1A[K[32mINFO:[0m Build completed successfully, 15 total actions
+[1A[K[32mINFO:[0m Build completed successfully, 15 total actions
+[0m

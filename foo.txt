@@ -1,0 +1,5 @@
+<!-- <my_elem k1="v1" k2="v2" my-key="some value"><child>text</child></my_elem> />
+<my_elem k1="v1" k2="v2" my-key="some value"><child>text</child></my_elem>
+<my_elem k1="v1" k2="v2" my-key="some value"><child>text</child></my_elem>
+<my_elem k1="v1" k2="v2" my-key="some value"><child>text</child></my_elem>
+<my_elem k1="v1" k2="v2" my-key="some value"><child>text</child></my_elem>
