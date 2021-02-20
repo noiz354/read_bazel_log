@@ -6,9 +6,21 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "mylib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mybin"
+path = "src/main.rs"
+
 [dependencies]
+assert-str = "0.1.0"
+walkdir = "2"
 fancy-regex = "0.4.1"
 regex = "1"
 scanner-rust = "2.0.12"
 futures={ version = "0.3.9", default-features = true, features=["thread-pool", "alloc"]} 
 quick-xml = "0.20.0"
+lazy_static = "1.4.0"
+recur-fn = "2.2.0"

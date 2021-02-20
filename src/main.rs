@@ -1,3 +1,6 @@
+#[macro_use] extern crate lazy_static;
+extern crate regex;
+
 extern crate futures;
 use scanner_rust::ScannerAscii;
 
@@ -5,6 +8,8 @@ use scanner_rust::generic_array::typenum::U64;
 use scanner_rust::Scanner as scanner2;
 // use scanner_rust::ScannerStr as scanner_str;
 use scanner_rust::ScannerError;
+
+use mylib::test;
 
 use std::env;
 
